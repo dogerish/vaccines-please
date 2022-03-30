@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head></head>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="styles.css"/>
+	</head>
 	<body>
-		<p>VACCINES PLEASEEEEE</p>
-		<p>bruh tesat</p>
+		<div id="game-area">
+
+			<!-- TITLE SCREEN -->
+			<div id="title-screen">
+				<h1>Vaccines Please</h1>
+				<p id="game-description">A satirical decision-based survival game</p>
+				<h4 id="authors">Created by Luca, Lilly, and Theo</h4>
+				<button id="play-button" onclick="gameStart()" disabled="true">Glory to the Vaccinated</button>
+				<div id="checkbox-wrapper">
+					<input type="checkbox" id="wear-mask" name="wear-mask">
+					<label for="wear-mask">Unless vaccinated, I will remain masked.</label>
+				</div>
+				<script src="index.js"></script>
+			</div>
+		</div>
 	</body>
 </html>
