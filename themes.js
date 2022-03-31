@@ -16,6 +16,15 @@ const themes = {
 		"uihover": "lime",
 		"accent": "#333",
 		"accent-hover": "#000"
+	},
+	"mint": {
+		"background": "#1f262a",
+		"primary": "#6b9362",
+		"secondary": "#56764e",
+		"uicolor": "#004040",
+		"uihover": "#003333",
+		"accent": "#00b300",
+		"accent-hover": "#00b300"
 	}
 }
 
