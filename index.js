@@ -35,7 +35,7 @@ function evalParams(params)
 	{
 		switch (param[0])
 		{
-		// skip to a certain page
+		// BUGTESTER: skip to a certain page
 		case "skipto":
 			$("title-screen").classList.add("hidden");
 			$(param[1]).classList.remove("hidden");
