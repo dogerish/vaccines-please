@@ -19,7 +19,7 @@ const themes = {
 	},
 	"mint": {
 		"background": "#1f262a",
-		"primary": "#6b9362",
+		"primary": "#aac9a3",
 		"secondary": "#56764e",
 		"uicolor": "#004040",
 		"uihover": "#003333",

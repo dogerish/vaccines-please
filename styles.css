@@ -17,6 +17,11 @@
 .hidden {
 	display: none;
 }
+select {
+	background-color: var(--theme-background);
+	color: var(--theme-primary);
+	border-color: var(--theme-accent);
+}
 /* continue buttons */
 .continue {
 	padding: 5px 10px;
