@@ -68,3 +68,22 @@ select {
 	margin-top: 10px;
 	margin-left: auto;
 }
+
+/* news source */
+.news-title{
+
+}
+.news-image{
+	margin-right: 1em;
+	height: 6em;
+	float: left;
+}
+.news-cancel{
+	background-color: var(--theme-madcolor);
+	border-color: var(--theme-accent);
+	color: var(--theme-primary);
+}
+.news-cancel:hover{
+	background-color: var(--theme-madhover);
+	border-color: var(--theme-accent-hover);
+}

@@ -5,6 +5,8 @@ const themes = {
 		"secondary": "#aaa",
 		"uicolor": "green",
 		"uihover": "darkgreen",
+		"madcolor": "#af2616",
+		"madhover": "red",
 		"accent": "#fff",
 		"accent-hover": "#bbb"
 	},
@@ -14,6 +16,8 @@ const themes = {
 		"secondary": "#555",
 		"uicolor": "lightgreen",
 		"uihover": "lime",
+		"madcolor": "salmon",
+		"madhover": "red",
 		"accent": "#333",
 		"accent-hover": "#000"
 	},
@@ -23,6 +27,8 @@ const themes = {
 		"secondary": "#56764e",
 		"uicolor": "#004040",
 		"uihover": "#003333",
+		"madcolor": "salmon",
+		"madhover": "red",
 		"accent": "#00b300",
 		"accent-hover": "#00b300"
 	}
