@@ -1,24 +1,41 @@
+/* whole boi */
 :root {
-	/* dark theme */
-	--theme-background: #222;
-	--theme-primary: #eee;
-	--theme-secondary: #aaa;
-	--theme-uicolor: green;
-	--theme-accent: #fff;
-	/* light theme
-	--theme-background: #fff;
-	--theme-primary: #222;
-	--theme-secondary: #555;
-	--theme-uicolor: lightgreen;
-	--theme-accent: #000; */
 	background: var(--theme-background);
 	color: var(--theme-primary);
 	font-family: sans-serif;
 }
+#theme-choice {
+	margin-bottom: 10px;
+}
 #game-area {
 	border: 1px solid var(--theme-accent);
-	padding: 5px;
+	padding: 10px;
 }
+.screen-title {
+	text-align: center;
+}
+.hidden {
+	display: none;
+}
+/* continue buttons */
+.continue {
+	padding: 5px 10px;
+	background: var(--theme-uicolor);
+	color: var(--theme-primary);
+	border-radius: 5px;
+	border: 1px solid var(--theme-accent);
+}
+.continue:hover {
+	background: var(--theme-uihover);
+	border-color: var(--theme-accent-hover);
+}
+.continue:disabled {
+	background: var(--theme-uicolor);
+	border-color: var(--theme-accent);
+	opacity: 50%;
+}
+
+/* title screen */
 #title-screen * {
 	text-align: center;
 }
@@ -29,12 +46,20 @@
 #play-button {
 	display: block;
 	margin: 5px auto;
-	padding: 5px 10px;
-	background: var(--theme-uicolor);
-	color: var(--theme-primary);
-	border-radius: 5px;
-	border: 1px solid var(--theme-accent);
 }
-#play-button:disabled {
-	opacity: 50%;
+
+/* backstory screen */
+#backstory-screen p {
+	text-indent: 2em;
+}
+#backstory-screen img {
+	height: 300px;
+}
+#sanitize-poster {
+	float: right;
+}
+#backstory-screen .continue {
+	display: block;
+	margin-top: 10px;
+	margin-left: auto;
 }

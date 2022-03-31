@@ -2,23 +2,41 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
+		<title>Vaccines Please</title>
 		<link rel="stylesheet" href="styles.css"/>
 	</head>
 	<body>
+		<div id="theme-choice">
+			<label for="theme">Choose a theme: </label>
+			<select name="theme" id="theme-select">
+			</select>
+			<script type="text/javascript" src="themes.js"></script>
+		</div>
 		<div id="game-area">
 
 			<!-- TITLE SCREEN -->
-			<div id="title-screen">
+			<div id="title-screen" class="screen">
 				<h1>Vaccines Please</h1>
 				<p id="game-description">A satirical decision-based survival game</p>
 				<h4 id="authors">Created by Luca, Lilly, and Theo</h4>
-				<button id="play-button" onclick="gameStart()" disabled="true">Glory to the Vaccinated</button>
+				<button id="play-button" onclick="backstory()" class="continue" disabled="true">Glory to the Vaccinated</button>
 				<div id="checkbox-wrapper">
 					<input type="checkbox" id="wear-mask" name="wear-mask">
 					<label for="wear-mask">Unless vaccinated, I will remain masked.</label>
 				</div>
-				<script src="index.js"></script>
 			</div>
+
+			<!-- BACKSTORY -->
+			<div id="backstory-screen" class="screen hidden">
+				<h2 class="screen-title">Backstory</h2>
+				<p>The year is 2020. 🅱️ovid-19 is running rampant, and misinformation is on the loose all over the internet. Many people are choosing to trust Twitter, Meta, and other social media as their news sources. Some people are refusing healthcare policies and offerings, but some are accepting them and following guidelines. Others are going beyond mere acceptance and are overachieving.</p>
+				<p>You are a cis white male making decisions for him and his family. Make sure to trust the right sources so that you all stay happy and healthy. Your goal is to survive the pandemic. Every month, you will recieve news and have a decision to make for your family. Multiple news sources are provided, and any may be cancelled, with virtually no impact.</p>
+				<img id="mask-poster" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/wear-mask-poster-design-template-bf7dbd1c51de0d3d1c5a60d13527d867_screen.jpg?ts=1594812694">
+				<img id="sanitize-poster" src="bovid.png">
+				<div><button class="continue" onclick="backstoryContinue()">Continue</button></div>
+			</div>
+
 		</div>
+		<script type="text/javascript" src="index.js"></script>
 	</body>
 </html>
