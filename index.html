@@ -36,13 +36,16 @@
 				<div><button class="continue" onclick="backstoryContinue()">Continue</button></div>
 			</div>
 			
-			<!-- DECISIONS SCREEN -->
+			<!-- DECISION SCREEN -->
 			<div id="decision-screen" class="screen hidden">
-				<div class="news-wrapper">
-					<img class="news-image" src="https://media.discordapp.net/attachments/808471748102062132/959203519452295228/unknown.png">
-					<h3 class="news-title">Source Name</h3>
-					<p class="news-paragraph">content</p>
-					<button class="news-cancel">CANCEL</button>
+				<script type="text/javascript" src="samples.js"></script>
+				<script type="text/javascript" src="news.js"></script>
+				<div id="news-half"></div>
+				<div id="decision-half">
+					<img id="decision-image" src="">
+					<h3 id="decision-prompt"></h3>
+					<button onclick="results(true)">Yes</button>
+					<button onclick="results(false)">No</button>
 				</div>
 			</div>
 		</div>

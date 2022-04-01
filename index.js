@@ -1,4 +1,5 @@
 const $ = id => document.getElementById(id);
+var decisionIndex;
 
 function backstory()
 {
@@ -12,15 +13,29 @@ function backstoryContinue()
 }
 function decisions()
 {
+	decisionIndex = Math.floor(Math.random() * samples.length);
+	$("news-half").innerHTML = samples[decisionIndex].news.reduce((p, e) => p + substituteKeys(newsTemplate, e), "");
+	
+
+	$("decision-image").setAttribute("src", samples[decisionIndex].decision.image);
+	$("decision-prompt").innerText = samples[decisionIndex].decision.prompt;
+
 	// show news and decisions element
+	$("decision-screen").classList.remove("hidden");
 }
-function results()
+function results(response)
 {
+	$("decision-screen").classList.add("hidden");
 	// show results element
 }
 function endgame()
 {
 	// show endgame element
+}
+
+
+function cancelSource(e){
+	e.parentNode.classList.add("hidden");
 }
 
 $("wear-mask").onclick = function(e) { $("play-button").disabled = !this.checked; }
