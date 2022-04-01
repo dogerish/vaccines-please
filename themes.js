@@ -16,8 +16,8 @@ const themes = {
 		"secondary": "#555",
 		"uicolor": "lightgreen",
 		"uihover": "lime",
-		"madcolor": "salmon",
-		"madhover": "red",
+		"madcolor": "red",
+		"madhover": "salmon",
 		"accent": "#333",
 		"accent-hover": "#000"
 	},
@@ -27,8 +27,8 @@ const themes = {
 		"secondary": "#56764e",
 		"uicolor": "#004040",
 		"uihover": "#003333",
-		"madcolor": "salmon",
-		"madhover": "red",
+		"madcolor": "darkred",
+		"madhover": "#d20505",
 		"accent": "#00b300",
 		"accent-hover": "#00b300"
 	}
@@ -51,5 +51,5 @@ function getAvailableThemes()
 	for (let theme of getAvailableThemes())
 		selector.innerHTML += `<option value="${theme}">${theme}</option>`;
 	selector.onchange = function() { applyTheme(this.value); };
+	selector.onchange();
 }
-applyTheme("dark");

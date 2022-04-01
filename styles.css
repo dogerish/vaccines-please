@@ -23,7 +23,7 @@ select {
 	border-color: var(--theme-accent);
 }
 /* continue buttons */
-.continue {
+button {
 	padding: 5px 10px;
 	background: var(--theme-uicolor);
 	color: var(--theme-primary);
