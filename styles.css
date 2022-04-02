@@ -109,3 +109,8 @@ button:hover {
 #decision-image {
 	max-height: 400px;
 }
+
+/* result */
+#result-image {
+	max-width: 50%;
+}

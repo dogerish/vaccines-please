@@ -22,10 +22,27 @@ var samples = [
                 content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
             }
         ],
-        decision:{
+        decision: {
             image: "https://cdn.discordapp.com/attachments/808471748102062132/959557139565797416/unknown.png",
             prompt: "are you happy?"
+        },
+        result: {
+            yes: {
+                image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clker.com%2Fcliparts%2Fc%2FQ%2Fw%2Fm%2F1%2Fg%2Fmulti-colored-square-hi.png&f=1&nofb=1",
+                who: "father",
+                how: "sicken",
+                what: "Love",
+                length: 3,
+                description: "you are sick dumbass"
+            },
+            no: {
+                image: "https://cdn.discordapp.com/attachments/808471748102062132/959611224692228166/unknown.png",
+                who: "father",
+                how: "kill",
+                description: "you are dead dumbass"
+            }
+            
         }
-        
+
     }
 ]

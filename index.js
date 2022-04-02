@@ -1,5 +1,6 @@
 const $ = id => document.getElementById(id);
 var decisionIndex;
+var family = new Family();
 
 function backstory()
 {
@@ -8,11 +9,13 @@ function backstory()
 }
 function backstoryContinue()
 {
-	$("backstory-screen").classList.add("hidden");
 	decisions();
 }
 function decisions()
 {
+	$("backstory-screen").classList.add("hidden");
+	$("result-screen").classList.add("hidden");
+
 	decisionIndex = Math.floor(Math.random() * samples.length);
 	$("news-half").innerHTML = samples[decisionIndex].news.reduce((p, e) => p + substituteKeys(newsTemplate, e), "");
 	
@@ -25,8 +28,25 @@ function decisions()
 }
 function results(response)
 {
+	family.update();
 	$("decision-screen").classList.add("hidden");
-	// show results element
+	$("result-screen").classList.remove("hidden");
+	var result = samples[decisionIndex].result[response];
+	family.evalResult(result);
+	$("result-title").innerHTML = result.description;
+	$("result-image").setAttribute("src", result.image);
+	for(let member of Object.keys(family)){
+		$(`result-${member}`).innerText = family[member].statusString();
+	}
+
+	if(family.father.status == "dead"){
+		$("result-button").innerText = "Go to coffin";
+		$("result-button").onclick = endgame;
+	}
+	else{
+		$("result-button").innerText = "Go to bed";
+		$("result-button").onclick = decisions;
+	}
 }
 function endgame()
 {
