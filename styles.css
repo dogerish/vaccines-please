@@ -128,3 +128,18 @@ button:hover {
 	display: block;
 	margin-left: auto;
 }
+
+/* endgame */
+#endgame-title {
+	text-align: center;
+}
+#endgame-image {
+	float: left;
+	max-height: 15em;
+	margin-right: 1em;
+}
+#endgame-button {
+	display: block;
+	clear:left;
+	margin-left: auto;
+}

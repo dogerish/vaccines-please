@@ -31,7 +31,7 @@ var samples = [
                 image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clker.com%2Fcliparts%2Fc%2FQ%2Fw%2Fm%2F1%2Fg%2Fmulti-colored-square-hi.png&f=1&nofb=1",
                 who: "father",
                 how: "sicken",
-                what: "Love",
+                what: "poisen",
                 length: 3,
                 description: "you are sick dumbass"
             },
