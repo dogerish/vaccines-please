@@ -4,6 +4,8 @@ function cancelSource(e){
 }
 function updatePlayButton(e) { $("play-button").disabled = !e.checked; }
 
+let game = new Game();
+
 // evaluates URL parameters from a string
 function evalParams(params)
 {
@@ -16,8 +18,7 @@ function evalParams(params)
 		{
 		// BUGTESTER: skip to a certain page
 		case "skipto":
-			$("title-screen").classList.add("hidden");
-			$(param[1]).classList.remove("hidden");
+			eval(`game.swapScreens(${param[1]})`);
 			break;
 		// BUGTESTER: automatically execute javascript
 		case "autoexec":
@@ -34,5 +35,3 @@ function evalParams(params)
 }
 // evaluate parameters in the url
 evalParams(window.location.href.slice(window.location.href.indexOf('?') + 1));
-
-let game = new Game();

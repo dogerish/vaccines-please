@@ -78,10 +78,13 @@ button:hover {
 }
 .news-image {
 	margin-right: 1em;
+	margin-bottom: 5px;
 	height: 6em;
 	float: left;
 }
 .news-cancel {
+	clear: left;
+	display: block;
 	background-color: var(--theme-madcolor);
 	border-color: var(--theme-accent);
 	color: var(--theme-primary);
@@ -112,5 +115,16 @@ button:hover {
 
 /* result */
 #result-image {
-	max-width: 50%;
+	max-height: 15em;
+	float: left;
+	margin-right: 1em;
+}
+#result-list {
+	position: relative;
+	left: 1em;
+}
+#result-button {
+	clear: left;
+	display: block;
+	margin-left: auto;
 }
