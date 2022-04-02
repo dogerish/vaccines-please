@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="styles.css"/>
 	</head>
 	<body>
+		<script type="text/javascript">const $ = id => document.getElementById(id);</script>
 		<div id="theme-choice">
 			<label for="theme">Choose a theme: </label>
 			<select name="theme" id="theme-select">
@@ -19,9 +20,9 @@
 				<h1>Vaccines Please</h1>
 				<p id="game-description">A satirical decision-based survival game</p>
 				<h4 id="authors">Created by Luca, Lilly, and Theo</h4>
-				<button id="play-button" onclick="backstory()" class="continue" disabled="true">Glory to the Vaccinated</button>
+				<button id="play-button" onclick="game.swapScreens('backstory')" class="continue" disabled="true">Glory to the Vaccinated</button>
 				<div id="checkbox-wrapper">
-					<input type="checkbox" id="wear-mask" name="wear-mask">
+					<input type="checkbox" id="wear-mask" name="wear-mask" onclick="updatePlayButton(this)">
 					<label for="wear-mask">Unless vaccinated, I will remain masked.</label>
 				</div>
 			</div>
@@ -33,7 +34,7 @@
 				<p>You are a cis white male making decisions for him and his family. Make sure to trust the right sources so that you all stay happy and healthy. Your goal is to survive the pandemic. Every month, you will recieve news and have a decision to make for your family. Multiple news sources are provided, and any may be cancelled, with virtually no impact.</p>
 				<img id="mask-poster" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/wear-mask-poster-design-template-bf7dbd1c51de0d3d1c5a60d13527d867_screen.jpg?ts=1594812694">
 				<img id="sanitize-poster" src="bovid.png">
-				<div><button class="continue" onclick="backstoryContinue()">Continue</button></div>
+				<div><button class="continue" onclick="game.swapScreens('decision')">Continue</button></div>
 			</div>
 			
 			<!-- DECISION SCREEN -->
@@ -44,8 +45,8 @@
 				<div id="decision-half">
 					<img id="decision-image" src="">
 					<h3 id="decision-prompt"></h3>
-					<button onclick="results('yes')">Yes</button>
-					<button onclick="results('no')">No</button>
+					<button onclick="game.swapScreens('result', null, 'yes')">Yes</button>
+					<button onclick="game.swapScreens('result', null, 'no')">No</button>
 				</div>
 			</div>
 
@@ -63,6 +64,7 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="family.js"></script>
+		<script type="text/javascript" src="game.js"></script>
 		<script type="text/javascript" src="index.js"></script>
 	</body>
 </html>

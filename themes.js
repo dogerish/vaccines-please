@@ -47,7 +47,7 @@ function getAvailableThemes()
 }
 
 {
-	let selector = document.getElementById("theme-select");
+	let selector = $("theme-select");
 	for (let theme of getAvailableThemes())
 		selector.innerHTML += `<option value="${theme}">${theme}</option>`;
 	selector.onchange = function() { applyTheme(this.value); };
