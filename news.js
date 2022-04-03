@@ -8,8 +8,8 @@ var newsTemplate = '<div class="news-wrapper">'
 // takes in a template and replaces things in curly brackets with key values
 // keys should be an object with key value pairs
 function substituteKeys(template, keys){
-    for(let key of Object.keys(keys)){
-        template = template.replace(`{${key}}`, keys[key]);
-    }
-    return template;
+	for(let key of Object.keys(keys)){
+		template = template.replace(`{${key}}`, keys[key]);
+	}
+	return template;
 }
