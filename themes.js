@@ -1,4 +1,15 @@
 const themes = {
+	"mint": {
+		"background": "#1f262a",
+		"primary": "#aac9a3",
+		"secondary": "#56764e",
+		"uicolor": "#004040",
+		"uihover": "#003333",
+		"madcolor": "darkred",
+		"madhover": "#d20505",
+		"accent": "#00b300",
+		"accent-hover": "#00b300"
+	},
 	"dark": {
 		"background": "#222",
 		"primary": "#eee",
@@ -20,17 +31,6 @@ const themes = {
 		"madhover": "salmon",
 		"accent": "#333",
 		"accent-hover": "#000"
-	},
-	"mint": {
-		"background": "#1f262a",
-		"primary": "#aac9a3",
-		"secondary": "#56764e",
-		"uicolor": "#004040",
-		"uihover": "#003333",
-		"madcolor": "darkred",
-		"madhover": "#d20505",
-		"accent": "#00b300",
-		"accent-hover": "#00b300"
 	}
 }
 
