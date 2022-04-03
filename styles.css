@@ -39,6 +39,14 @@ button:hover {
 	border-color: var(--theme-accent);
 	opacity: 50%;
 }
+/* clock */
+#status-bar {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        background: var(--theme-uicolor);
+        padding: 5px;
+}
 
 /* title screen */
 #title-screen * {
@@ -111,6 +119,7 @@ button:hover {
 
 #decision-image {
 	max-height: 400px;
+	max-width: 100%;
 }
 
 /* result */
@@ -122,6 +131,9 @@ button:hover {
 #result-list {
 	position: relative;
 	left: 1em;
+}
+#result-list li span {
+        font-weight: bold;
 }
 #result-button {
 	clear: left;

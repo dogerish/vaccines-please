@@ -2,29 +2,55 @@ const HEALTHY = "healthy";
 const SICK = "sick";
 const DEAD = "dead";
 
+class Sickness
+{
+        constructor(date, name, weeks, lethal)
+        {
+                this.name = name;
+                this.endsOn = new Date(date.valueOf());
+                this.endsOn.setDate(this.endsOn.getDate() + weeks * 7);
+                this.lethal = lethal;
+        }
+}
+
 class FamilyMember{
     constructor(name){
         this.name = name;
-        this.sicknessName = "";
         this.status = HEALTHY;
-        this.sicknessLevel = 0;
+        this.sickness = null;
     }
     
-    update(){
-        if(this.status == SICK && this.sicknessLevel){
-            this.sicknessLevel--;
-            if (this.sicknessLevel == 0){
-                this.status = DEAD;
-            }
+    update(date){
+        if (this.status == SICK && date >= this.sickness.endsOn) {
+	        this.status = (this.sickness.lethal) ? DEAD : HEALTHY;
+	        this.sickness = null;
         }
     }
 
-    sicken(name, turns){
-        //if the current sickness will kill the person faster dont apply new sickness
-        if(this.status == SICK && this.sicknessLevel < turns || this.status == DEAD) return;
+    applySickness(sickness)
+    {
         this.status = SICK;
-        this.sicknessName = name;
-        this.sicknessLevel = turns;
+        this.sickness = sickness;
+    }
+    // returns true if sickness was applied
+    sicken(...sicknessArgs){
+        let s = new Sickness(...sicknessArgs);
+        // if not already sick
+        // or if current sickness isn't lethal and new is
+        // or if both lethal and new kills faster
+        // or if neither lethal and new ends later
+        if (
+                this.status != SICK
+                || (!this.sickness.lethal && s.lethal)
+                || (this.sickness.lethal && s.lethal && s.endsOn <= this.sickness.endsOn)
+                || (!this.sickness.lethal && !s.lethal && s.endsOn >= this.sickness.endsOn)
+        )
+        {
+                this.applySickness(s);
+                return true;
+        }
+                console.log("noapply");
+        return false;
     }
 
     kill(){
@@ -32,33 +58,55 @@ class FamilyMember{
     }
 
     statusString(){
-        return this.status + ((this.status == SICK) ? ` with ${this.sicknessName} for ${this.sicknessLevel} turns` : "");
+        let s = this.status;
+        if (this.status == SICK)
+                s += substituteKeys(" with {sickness} ({lethality}) until {date}", {
+                        sickness: this.sickness.name,
+                        lethality: this.sickness.lethal ? "lethal" : "nonlethal",
+                        date: this.sickness.endsOn.toLocaleDateString()
+                });
+        return s;
     }
 }
 
 class Family{
-    constructor(){
+    constructor(onsicken){
         this.father = new FamilyMember("father");
         this.wife = new FamilyMember("wife");
         this.son = new FamilyMember("son");
         this.daughter = new FamilyMember("daughter");
+        this.onsicken = onsicken;
     }
 
-    evalResult(result){
+    forEach(/*function*/ f)
+    {
+        f(this.father);
+        f(this.wife);
+        f(this.son);
+        f(this.daughter);
+    }
+
+    evalResult(date, result){
         switch(result.how){
             case "sicken":
-                this[result.who].sicken(result.what, result.length)
+                if (
+                        this[result.who].sicken(date, result.what, result.length, result.lethal)
+                        && this.onsicken
+                )
+                        this.onsicken(this[result.who]);
                 break;
             case "kill":
                 this[result.who].kill();
                 break;
+            case "nothing":
+                break;
+            default:
+                console.error(`Unknown effect for result '${result.how}'`);
+                break;
         }
     }
 
-    update(){
-        this.father.update();
-        this.wife.update();
-        this.son.update();
-        this.daughter.update();
+    update(date){
+        this.forEach(member => member.update(date));
     }
 }
