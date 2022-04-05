@@ -1,103 +1,48 @@
+const srcs = {
+	bwitter: {
+		image: "images/bwitter.png",
+		name: "Bwitter"
+	},
+	bsj: {
+		image: "images/bsj.png",
+		name: "The Ball Street Journal"
+	}
+};
 var plot = [
 	{
-		date: "1/1/2020",
+		date: "1/15/2020",
 		news: [
 			{
-				image: "https://media.discordapp.net/attachments/726029725989863515/959487668771766332/unknown.png",
-				name: "yeet",
-				content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
+				...srcs.bwitter,
+				content: "New virus, BOVID-19 is spreading from China to Europe"
 			},
 			{
-				image: "https://cdn.discordapp.com/avatars/240487247692955648/a_6c7f55b50ea43670fd669d6269a59aac.gif?size=80",
-				name: "Lilfa",
-				content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
+				...srcs.bsj,
+				content: "New cases of Boronavirus appeared in Italy, invoking efforts to contain the virus in rural regions."
 			},
-			{
-				image: "https://cdn.discordapp.com/avatars/725050767102443632/ee96a5886a9476353427e985aad9179b.webp?size=80",
-				name: "dogerish",
-				content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
-			},
-			{
-				image: "https://cdn.discordapp.com/avatars/595046499000516608/b03c74df83bd146b41ade63c33481085.webp?size=80",
-				name: "IcyPhoenix",
-				content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
-			}
 		],
 		decision: {
-			image: "https://cdn.discordapp.com/attachments/808471748102062132/959557139565797416/unknown.png",
-			prompt: "are you happy?",
-			yes: "click me to say yes",
-			no: "nooooo"
+			image: "images/italy.jpg",
+			prompt: "You have a trip planned to Italy, do you want to take it or stay home?",
+			yes: "Lick international doorknobs!",
+			no: "Take a boring Staycation"
 		},
 		result: {
 			yes: {
-				image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clker.com%2Fcliparts%2Fc%2FQ%2Fw%2Fm%2F1%2Fg%2Fmulti-colored-square-hi.png&f=1&nofb=1",
+				image: "images/italy-quarantine.jpeg",
 				who: "father",
 				how: "sicken",
-				what: "poisen",
+				what: "BOVID-19",
 				length: 3,
 				lethal: false,
-				description: "you are sick dumbass"
+				description: "While you relax in Italy, you contract a disease and have to quarantine. Oh well, at least it's pretty here!"
 			},
 			no: {
-				image: "https://cdn.discordapp.com/attachments/808471748102062132/959611224692228166/unknown.png",
-				who: "father",
-				how: "kill",
-				description: "you are dead dumbass"
+				image: "images/staycation.jpeg",
+				how: "nothing",
+				description: "You relax in your home and get some quality family time during this stressful pandemic."
 			}
-			
 		}
-
-	},
-	{
-		date: "2/1/2020",
-		news: [
-			{
-				image: "https://media.discordapp.net/attachments/726029725989863515/959487668771766332/unknown.png",
-				name: "yeet",
-				content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
-			},
-			{
-				image: "https://cdn.discordapp.com/avatars/240487247692955648/a_6c7f55b50ea43670fd669d6269a59aac.gif?size=80",
-				name: "Lilfa",
-				content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
-			},
-			{
-				image: "https://cdn.discordapp.com/avatars/725050767102443632/ee96a5886a9476353427e985aad9179b.webp?size=80",
-				name: "dogerish",
-				content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
-			},
-			{
-				image: "https://cdn.discordapp.com/avatars/595046499000516608/b03c74df83bd146b41ade63c33481085.webp?size=80",
-				name: "IcyPhoenix",
-				content: "yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall, yeetus deletus sat on the wall"
-			}
-		],
-		decision: {
-			image: "https://cdn.discordapp.com/attachments/808471748102062132/959557139565797416/unknown.png",
-			prompt: "are you happy?",
-			yes: "click me to say yes",
-			no: "nooooo"
-		},
-		result: {
-			yes: {
-				image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clker.com%2Fcliparts%2Fc%2FQ%2Fw%2Fm%2F1%2Fg%2Fmulti-colored-square-hi.png&f=1&nofb=1",
-				who: "father",
-				how: "sicken",
-				what: "poisen",
-				length: 3,
-				lethal: true,
-				description: "you are sick dumbass"
-			},
-			no: {
-				image: "https://cdn.discordapp.com/attachments/808471748102062132/959611224692228166/unknown.png",
-				who: "father",
-				how: "kill",
-				description: "you are dead dumbass"
-			}
-			
-		}
-
 	}
 ];
 
