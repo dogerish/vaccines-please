@@ -4,13 +4,17 @@ const DEAD = "dead";
 
 class Sickness
 {
-	constructor(date, name, weeks, lethal)
+	constructor(date, name, weeks, lethality)
 	{
 		this.name = name;
 		this.endsOn = new Date(date.valueOf());
 		this.endsOn.setDate(this.endsOn.getDate() + weeks * 7);
-		this.lethal = lethal;
+		this.lethality = lethality;
 	}
+
+	// calculates how dangerous this sickness is based on the proportion of lethality to remaining
+	// duration. higher result = higher danger
+	calcDanger(date) { return this.lethality / (this.endsOn - date); }
 }
 
 class FamilyMember{
@@ -22,7 +26,7 @@ class FamilyMember{
 
 	update(date){
 		if (this.status == SICK && date >= this.sickness.endsOn) {
-			this.status = (this.sickness.lethal) ? DEAD : HEALTHY;
+			this.status = (Math.random() < this.sickness.lethality) ? DEAD : HEALTHY;
 			this.sickness = null;
 		}
 	}
@@ -35,16 +39,8 @@ class FamilyMember{
 	// returns true if sickness was applied
 	sicken(...sicknessArgs){
 		let s = new Sickness(...sicknessArgs);
-		// if not already sick
-		// or if current sickness isn't lethal and new is
-		// or if both lethal and new kills faster
-		// or if neither lethal and new ends later
-		if (
-			this.status != SICK
-			|| (!this.sickness.lethal && s.lethal)
-			|| (this.sickness.lethal && s.lethal && s.endsOn <= this.sickness.endsOn)
-			|| (!this.sickness.lethal && !s.lethal && s.endsOn >= this.sickness.endsOn)
-		)
+		// if not already sick or if sickness is more dangerous, use it
+		if (this.status != SICK || this.sickness.calcDanger() < s.calcDanger())
 		{
 			this.applySickness(s);
 			return true;
@@ -59,9 +55,9 @@ class FamilyMember{
 	statusString(){
 		let s = this.status;
 		if (this.status == SICK)
-			s += substituteKeys(" with {sickness} ({lethality}) until {date}", {
+			s += substituteKeys(" with {sickness} ({lethality}% lethal) until {date}", {
 				sickness: this.sickness.name,
-				lethality: this.sickness.lethal ? "lethal" : "nonlethal",
+				lethality: this.sickness.lethality * 100,
 				date: this.sickness.endsOn.toLocaleDateString()
 			});
 		return s;
@@ -89,7 +85,7 @@ class Family{
 		switch(result.how){
 		case "sicken":
 			if (
-				this[result.who].sicken(date, result.what, result.length, result.lethal)
+				this[result.who].sicken(date, result.what, result.length, result.lethality)
 				&& this.onsicken
 			)
 				this.onsicken(this[result.who]);
