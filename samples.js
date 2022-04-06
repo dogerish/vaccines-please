@@ -29,7 +29,7 @@ const common = {
 
 var plot = [
 	{
-		date: "1/15/2020",
+		date: "1/5/2020",
 		news: [
 			{
 				...common.news.bwitter,
@@ -56,7 +56,7 @@ var plot = [
 			no: {
 				image: "images/staycation.jpeg",
 				how: "nothing",
-				description: "You relax in your home and get some quality family time during this stressful pandemic."
+				description: "You relax in your home and get some quality family time."
 			}
 		}
 	}
