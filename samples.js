@@ -79,25 +79,22 @@ var nonplot = [
 			}
 		],
 		decision: {
-			image: "https://media.discordapp.net/attachments/808471748102062132/960258942603251742/unknown.png",
-			prompt: "make a cool non plot decision",
-			yes: "bruh momento",
-			no: "never"
+			image: "images/essential-oils.jpeg",
+			prompt: "Will you buy some essential oils to try curing the sickness with?",
+			yes: "They are essential and natural, I'll try it.",
+			no: "No, who even thinks that would work?"
 		},
 		result: {
 			yes: {
-				image: "https://media.discordapp.net/attachments/808471748102062132/960252502496911380/unknown.png",
-				who: "daughter",
-				how: "kill",
-				what: "drugs",
-				description: "you are daughter is ded dumbass"
+				image: "images/relaxed.jpeg",
+				how: "nothing",
+				description: "After using essential oils, you gained peace of mind and believe that things will get better now. "
 			},
 			no: {
-				image: "https://cdn.discordapp.com/attachments/808471748102062132/959611224692228166/unknown.png",
+				image: "images/worried.jpeg",
 				how: "nothing",
-				description: "you survivd"
+				description: "You continue to worry about how the sickness progresses."
 			}
-			
 		}
 	}
 ];
