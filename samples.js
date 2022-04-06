@@ -1,23 +1,42 @@
-const srcs = {
-	bwitter: {
-		image: "images/bwitter.png",
-		name: "Bwitter"
+const common = {
+	news: {
+		bwitter: {
+			image: "images/bwitter.png",
+			name: "Bwitter"
+		},
+		bsj: {
+			image: "images/bsj.png",
+			name: "The Ball Street Journal"
+		},
+		beta: {
+			image: "images/beta.png",
+			name: "Beta"
+		},
+		nbt: {
+			image: "images/nbt.png",
+			name: "The New Bork Times"
+		}
 	},
-	bsj: {
-		image: "images/bsj.png",
-		name: "The Ball Street Journal"
+	sick: {
+		bovid: {
+			how: "sicken",
+			what: "BOVID-19",
+			length: 3,
+			lethality: 0.06
+		}
 	}
 };
+
 var plot = [
 	{
 		date: "1/15/2020",
 		news: [
 			{
-				...srcs.bwitter,
+				...common.news.bwitter,
 				content: "New virus, BOVID-19 is spreading from China to Europe"
 			},
 			{
-				...srcs.bsj,
+				...common.news.bsj,
 				content: "New cases of Boronavirus appeared in Italy, invoking efforts to contain the virus in rural regions."
 			},
 		],
@@ -31,11 +50,8 @@ var plot = [
 			yes: {
 				image: "images/italy-quarantine.jpeg",
 				who: "father",
-				how: "sicken",
-				what: "BOVID-19",
-				length: 3,
-				lethal: false,
-				description: "While you relax in Italy, you contract a disease and have to quarantine. Oh well, at least it's pretty here!"
+				...common.sick.bovid,
+				description: "While you relax in Italy, you contract a disease and have to quarantine. Oh well, at least it's Nice."
 			},
 			no: {
 				image: "images/staycation.jpeg",
@@ -50,9 +66,16 @@ var nonplot = [
 	{
 		news: [
 			{
-				image: "https://media.discordapp.net/attachments/808471748102062132/960269607581667429/unknown.png",
-				name: "twitter",
-				content: "non polot points"
+				...common.news.bwitter,
+				content: "NOOO! Essential oils can't heal BOVID-19!! Those claims are fraudulent!"
+			},
+			{
+				...common.news.beta,
+				content: "Due to the rising cases of Boronavirus, we're dropping a huge sale on our essential oil stock! Stay healthy, stay natural™"
+			},
+			{
+				...common.news.nbt,
+				content: "Though the sales of vitamins, herbs, and extracts have surged, none of them are proven to be effective against contracting or shortening the duration of BOVID-19."
 			}
 		],
 		decision: {
