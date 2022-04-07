@@ -126,6 +126,10 @@ button:hover {
 	display: block;
 	margin: auto;
 }
+#decision-buttons {
+	display: flex;
+	justify-content: space-between;
+}
 
 /* result */
 #result-image {
