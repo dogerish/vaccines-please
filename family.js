@@ -27,7 +27,7 @@ class FamilyMember{
 	update(date){
 		if (this.status == SICK && date >= this.sickness.endsOn) {
 			this.status = (Math.random() < this.sickness.lethality) ? DEAD : HEALTHY;
-			this.sickness = null;
+			if(this.status != DEAD) this.sickness = null;
 		}
 	}
 

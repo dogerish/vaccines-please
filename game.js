@@ -91,7 +91,21 @@ class Game
 				b.onclick = () => self.swapScreens('decision');
 			}
 		});
-		this.endgame = new Screen("endgame-screen");
+		this.endgame = new Screen("endgame-screen", function(){
+			var deadFamily = "";
+			var livingFamily = "";
+			self.family.nonPlayerList.forEach(member => {
+				(member.status == DEAD) ? deadFamily += `<br>- your ${member.name} died from ${member.sickness}`: livingFamily += `<br>- your ${member.name}`;
+			});
+			if(self.family.player.status == DEAD){
+				(livingFamily == "") ? $("endgame-image").classList.remove("hidden") : $("endgame-image").classList.add("hidden")
+				$("endgame-result").innerHTML = "You died";
+				$("endgame-details").innerHTML = `you survived for ${self.date.getMonth()} months. <br>people who are left to take care of themselves${livingFamily}`
+			}else{
+				$("endgame-result").innerHTML = "You survived";
+				$("endgame-details").innerHTML = `You made it through the pandemic along with ${livingFamily != "" ? livingFamily : "nobody"}<br> ${deadFamily != "" ? "family that died" + deadFamily : ""}`;
+			}
+		});
 		this.now = "title";
 	}
 
