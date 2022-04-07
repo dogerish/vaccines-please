@@ -118,7 +118,7 @@ var plot = [
 			}
 		],
 		decision: {
-			image: "",
+			image: "images/small-cough.jpeg",
 			prompt: "A family friend who is visiting from DC says he has a cough, but he’s sure it’s nothing, what do you do?",
 			yes: "Welcome him in for a home-cooked meal.",
 			no: "Banish him from your house!"
