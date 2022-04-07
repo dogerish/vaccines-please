@@ -206,14 +206,14 @@ var plot = [
 			}
 		],
 		decision: {
-			image: "?",
+			image: "images/birthday.jpg",
 			prompt: "You’re getting cabin fever and your birthday is coming up. Do you want to have a party?",
 			yes: "Nothing can stop my birthday, not even a pandemic!",
 			no: "Maybe this year doesn’t count"
 		},
 		result: {
 			yes: {
-				image: "?",
+				image: "images/small-cough.jpeg",
 				multiple: [
 					{ who: "son", ...common.sick.bovid, length: 2 },
 					{ who: "daughter", ...common.sick.bovid, length: 2 },
@@ -221,7 +221,7 @@ var plot = [
 				description: "A guest brings Bovid and you spread it to your son and daughter."
 			},
 			no: {
-				image: "?",
+				image: "images/mini-birthday.jpg",
 				description: "You’re sad about missing your own birthday, but your family throws you a surprise mini-party that cheers you up!"
 			}
 		}
@@ -242,14 +242,14 @@ var plot = [
 			}
 		],
 		decision: {
-			image: "?",
+			image: "images/thanksgiving.jpg",
 			prompt: "You're invited to Thanksgiving in New York, do you go see your family?",
 			yes: "I’ve already got antibodies, family is worth the risk!",
 			no: "Virtual Turkey time"
 		},
 		result: {
 			yes: {
-				image: "?",
+				image: "images/sick-girl.png",
 				multiple: [
 					{ who: "player",   ...common.sick.belta },
 					{ who: "wife",     ...common.sick.belta },
@@ -259,7 +259,7 @@ var plot = [
 				description: "Your cousin brought a new variant, Belta, to the gathering, and everyone got sick."
 			},
 			no: {
-				image: "?",
+				image: "images/delta-variant.png",
 				description: "You stay home, and luckily too, as you hear of a new Belta variant going around that’s twice as deadly!"
 			}
 		}
