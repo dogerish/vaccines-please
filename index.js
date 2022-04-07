@@ -24,6 +24,11 @@ function evalParams(params)
 		case "autoexec":
 			eval(param[1]);
 			break;
+		// BUGTESTER: automatically select decision index
+		case "di":
+			i = Number.parseInt(param[1]);
+			game.index = i - 1;
+			break;
 		// change the theme immediately
 		case "theme":
 			let s = $("theme-select");

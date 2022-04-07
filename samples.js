@@ -49,7 +49,7 @@ var plot = [
 		result: {
 			yes: {
 				image: "images/italy-quarantine.jpeg",
-				who: "father",
+				who: "player",
 				...common.sick.bovid,
 				description: "While you relax in Italy, you contract a disease and have to quarantine. Oh well, at least it's Nice."
 			},
@@ -57,6 +57,44 @@ var plot = [
 				image: "images/staycation.jpeg",
 				how: "nothing",
 				description: "You relax in your home and get some quality family time."
+			}
+		}
+	},
+	{
+		date: "2/9/2020",
+		news: [
+			{
+				...common.news.bwitter,
+				author: "Bwayne Bohnson",
+				content: "Hey bud, I have a cough but I'm sure it's nothing. Can I come visit you?"
+			},
+			{
+				...common.news.bsj,
+				content: "The first case of Boronavirus in the US has been confirmed in DC."
+			}
+		],
+		decision: {
+			image: "",
+			prompt: "A family friend who is visiting from DC says he has a cough, but he’s sure it’s nothing, what do you do?",
+			yes: "Welcome him in for a home-cooked meal.",
+			no: "Banish him from your house!"
+		},
+		result: {
+			yes: {
+				image: "",
+				multiple: [
+					{ who: "player", ...common.sick.bovid, length: 1.5 },
+					{ who: "wife", ...common.sick.bovid, length: 1.5  },
+					{ who: "son", ...common.sick.bovid, length: 1.5  },
+				],
+				description: "Shouldn’t have trusted that low-down, no good, lying cheat. He gets you, your wife and your son sick for 1.5 weeks."
+			},
+			no: {
+				image: "",
+				who: "player",
+				...common.sick.bovid,
+				length: 1,
+				description: "He starts yelling at you and sneezes, getting you sick for 1 week."
 			}
 		}
 	}

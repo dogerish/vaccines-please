@@ -66,38 +66,39 @@ class FamilyMember{
 
 class Family{
 	constructor(onsicken){
-		this.father = new FamilyMember("father");
+		this.player = new FamilyMember("player");
 		this.wife = new FamilyMember("wife");
 		this.son = new FamilyMember("son");
 		this.daughter = new FamilyMember("daughter");
+		this.dog = new FamilyMember("dog");
+		this.nonPlayerList = [this.wife, this.son, this.daughter, this.dog];
+		this.memberList = [this.player, ...this.nonPlayerList];
 		this.onsicken = onsicken;
 	}
 
-	forEach(/*function*/ f)
-	{
-		f(this.father);
-		f(this.wife);
-		f(this.son);
-		f(this.daughter);
-	}
+	forEach(/*function*/ f) { this.memberList.forEach(f); }
 
 	evalResult(date, result){
-		switch(result.how){
-		case "sicken":
-			if (
-				this[result.who].sicken(date, result.what, result.length, result.lethality)
-				&& this.onsicken
-			)
-				this.onsicken(this[result.who]);
-			break;
-		case "kill":
-			this[result.who].kill();
-			break;
-		case "nothing":
-			break;
-		default:
-			console.error(`Unknown effect for result '${result.how}'`);
-			break;
+		let list = result.multiple || [result];
+		for (let r of list)
+		{
+			switch(r.how){
+			case "sicken":
+				if (
+					this[r.who].sicken(date, r.what, r.length, r.lethality)
+					&& this.onsicken
+				)
+					this.onsicken(this[r.who]);
+				break;
+			case "kill":
+				this[r.who].kill();
+				break;
+			case "nothing":
+				break;
+			default:
+				console.error(`Unknown effect for result '${r.how}'`);
+				break;
+			}
 		}
 	}
 

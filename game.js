@@ -45,7 +45,7 @@ class Game
 				self.date = new Date(self.activeDecision.date);
 				self.family.update(self.date);
 				self.updateStatusBar();
-				if (self.family.father.status == DEAD) return self.swapScreens('endgame');
+				if (self.family.player.status == DEAD) return self.swapScreens('endgame');
 			}
 			$("news-feed").innerHTML = substituteKeys(
 				self.activeDecision.news.reduce(
@@ -73,12 +73,16 @@ class Game
 			self.updateStatusBar();
 			$("result-title").innerHTML = result.description;
 			$("result-image").setAttribute("src", result.image);
-			self.family.forEach(member =>
-				$(`result-${member.name}`).innerText = member.statusString()
+			let list = $("result-list");
+			list.innerHTML = self.family.nonPlayerList.reduce((p, member) =>
+				p + substituteKeys(statusTemplate, {
+					who: member.name, status: member.statusString()
+				}),
+				""
 			);
 
 			let b = $("result-button");
-			if(self.family.father.status == DEAD){
+			if(self.family.player.status == DEAD){
 				b.innerText = "Go to coffin";
 				b.onclick = () => self.swapScreens('endgame');
 			}
@@ -94,7 +98,7 @@ class Game
 	updateStatusBar()
 	{
 		$("clock").innerText = this.date.toLocaleDateString();
-		$("player-status").innerText = this.family.father.statusString();
+		$("player-status").innerText = this.family.player.statusString();
 	}
 	swapScreens(/*String*/ next, hideExt, showExt)
 	{
