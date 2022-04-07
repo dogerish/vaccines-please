@@ -95,15 +95,19 @@ class Game
 			var deadFamily = "";
 			var livingFamily = "";
 			self.family.nonPlayerList.forEach(member => {
-				(member.status == DEAD) ? deadFamily += `<br>- your ${member.name} died from ${member.sickness}`: livingFamily += `<br>- your ${member.name}`;
+				(member.status == DEAD) ? deadFamily += `<li>Your ${member.name} died from ${member.sickness}</li>` : livingFamily  += `<li>Your ${member.name}</li>` ;
 			});
 			if(self.family.player.status == DEAD){
 				(livingFamily == "") ? $("endgame-image").classList.remove("hidden") : $("endgame-image").classList.add("hidden")
 				$("endgame-result").innerHTML = "You died";
-				$("endgame-details").innerHTML = `you survived for ${self.date.getMonth()} months. <br>people who are left to take care of themselves${livingFamily}`
+				$("endgame-aliveDetail").innerHTML = `you survived for ${self.date.getMonth()} months. ${livingFamily != "" ? `<br>people who are left to take care of themselves` : ""}`
+				$("endgame-aliveList").innerHTML = livingFamily;
 			}else{
 				$("endgame-result").innerHTML = "You survived";
-				$("endgame-details").innerHTML = `You made it through the pandemic along with ${livingFamily != "" ? livingFamily : "nobody"}<br> ${deadFamily != "" ? "family that died" + deadFamily : ""}`;
+				$("endgame-aliveDetail").innerHTML = "You made it through the pandemic along with";
+				$("endgame-aliveList").innerHTML = livingFamily;
+				(deadFamily != "") ? $("endgame-deadDetail").innerText = "family that died": "";
+				$("endgame-deadList").innerHTML = deadFamily;
 			}
 		});
 		this.now = "title";
