@@ -71,6 +71,7 @@ const common = {
 */
 
 var plot = [
+	// January
 	{
 		date: "1/5/2020",
 		news: [
@@ -102,6 +103,7 @@ var plot = [
 			}
 		}
 	},
+	// February
 	{
 		date: "2/9/2020",
 		news: [
@@ -140,6 +142,7 @@ var plot = [
 			}
 		}
 	},
+	// March
 	{
 		date: "3/2/2020",
 		news: [
@@ -187,6 +190,7 @@ var plot = [
 ];
 
 var nonplot = [
+	// Essential Oils
 	{
 		news: [
 			{
@@ -219,6 +223,7 @@ var nonplot = [
 			}
 		}
 	},
+	// Quarantine
 	{
 		news: [
 			{
