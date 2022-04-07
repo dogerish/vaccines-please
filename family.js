@@ -1,3 +1,19 @@
+const SUPER = "superpowered";
+const SUPERPOWERS = [
+	"flight",
+	"strength",
+	"speed",
+	"invisibility",
+	"magnetism",
+	"x-ray vision",
+	"telekinesis",
+	"teleportation",
+	"telepathy",
+	"stretching",
+	"breathing underwater",
+	"jedi mind tricks",
+	"healing"
+];
 const HEALTHY = "healthy";
 const SICK = "sick";
 const DEAD = "dead";
@@ -22,6 +38,7 @@ class FamilyMember{
 		this.name = name;
 		this.status = HEALTHY;
 		this.sickness = null;
+		this.power = null;
 	}
 
 	update(date){
@@ -35,6 +52,11 @@ class FamilyMember{
 	{
 		this.status = SICK;
 		this.sickness = sickness;
+	}
+	superpower()
+	{
+		this.status = SUPER;
+		this.power = SUPERPOWERS[Math.floor(Math.random() * SUPERPOWERS.length)];
 	}
 	// returns true if sickness was applied
 	sicken(...sicknessArgs){
@@ -57,12 +79,19 @@ class FamilyMember{
 
 	statusString(){
 		let s = this.status;
-		if (this.status == SICK)
+		switch (this.status)
+		{
+		case SICK:
 			s += substituteKeys(" with {sickness} ({lethality}% lethal) until {date}", {
 				sickness: this.sickness.name,
 				lethality: this.sickness.lethality * 100,
 				date: this.sickness.endsOn.toLocaleDateString()
 			});
+			break;
+		case SUPER:
+			s += ` with ${this.power}`
+			break;
+		}
 		return s;
 	}
 }
@@ -92,6 +121,9 @@ class Family{
 					&& this.onsicken
 				)
 					this.onsicken(this[r.who]);
+				break;
+			case "superpower":
+				this[r.who].superpower();
 				break;
 			case "kill":
 				this[r.who].kill();
