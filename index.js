@@ -26,8 +26,20 @@ function evalParams(params)
 			break;
 		// BUGTESTER: automatically select decision index
 		case "di":
-			i = Number.parseInt(param[1]);
+			let i = Number.parseInt(param[1]);
 			game.index = i - 1;
+			break;
+		// BUGTESTER: find decision based on search;
+		// just finds the first one where the beggining of the date starts with the parameter
+		case "ds":
+			for (let i = 0; i < plot.length; i++)
+			{
+				if (plot[i].date.startsWith(param[1]))
+				{
+					game.index = i - 1;
+					break;
+				}
+			}
 			break;
 		// change the theme immediately
 		case "theme":
