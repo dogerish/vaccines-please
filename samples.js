@@ -24,6 +24,12 @@ const common = {
 			length: 3,
 			lethality: 0.06
 		},
+		belta: {
+			how: "sicken",
+			what: "BOVID-19 Belta Variant",
+			length: 1,
+			lethality: 0.12
+		},
 		blu: {
 			how: "sicken",
 			what: "the Blu",
@@ -177,6 +183,84 @@ var plot = [
 					{ who: "wife", ...common.sick.blu }
 				],
 				description: "A restaurant waiter has asymptomatic Bovid and your daughter catches it. She gets hospitalized, and your wife gets the flu in the hospital."
+			}
+		}
+	},
+	// May
+	{
+		date: "5/10/2020",
+		news: [
+			{
+				...common.news.bwitter,
+				author: "Joseph Mother",
+				content: "Hey man, are you gonna have a birthday party this year? That bovid stuff is a hoax, don't let it scare you."
+			},
+			{
+				...common.news.beta,
+				author: "Candice",
+				content: "I hope you have a birthday party this year. I miss seeing you and feel tired of staying at home. But man, that Boronavirus worries me."
+			},
+			{
+				...common.news.nbt,
+				content: "Boronavirus cases are continuing to surge in the US. President Bump has launched Operation Warp Speed in an attempt to develop a vaccine quickly."
+			}
+		],
+		decision: {
+			image: "?",
+			prompt: "You’re getting cabin fever and your birthday is coming up. Do you want to have a party?",
+			yes: "Nothing can stop my birthday, not even a pandemic!",
+			no: "Maybe this year doesn’t count"
+		},
+		result: {
+			yes: {
+				image: "?",
+				multiple: [
+					{ who: "son", ...common.sick.bovid, length: 2 },
+					{ who: "daughter", ...common.sick.bovid, length: 2 },
+				],
+				description: "A guest brings Bovid and you spread it to your son and daughter."
+			},
+			no: {
+				image: "?",
+				description: "You’re sad about missing your own birthday, but your family throws you a surprise mini-party that cheers you up!"
+			}
+		}
+	},
+	// November
+	{
+		date: "11/11/2020",
+		news: [
+			{
+				...common.news.beta,
+				author: "Barbara",
+				content: "My son, come up to New York and celebrate Thanksgiving with us! I promise to stuff you full of Turkey! 🥺😍"
+			},
+			{
+				...common.news.beta,
+				author: "George",
+				content: "Son, we're having Thanksgiving in NY this year, even though that joke of a virus BOVID is scaring everyone. I expect your presence."
+			}
+		],
+		decision: {
+			image: "?",
+			prompt: "You're invited to Thanksgiving in New York, do you go see your family?",
+			yes: "I’ve already got antibodies, family is worth the risk!",
+			no: "Virtual Turkey time"
+		},
+		result: {
+			yes: {
+				image: "?",
+				multiple: [
+					{ who: "player",   ...common.sick.belta },
+					{ who: "wife",     ...common.sick.belta },
+					{ who: "son",      ...common.sick.belta },
+					{ who: "daughter", ...common.sick.belta }
+				],
+				description: "Your cousin brought a new variant, Belta, to the gathering, and everyone got sick."
+			},
+			no: {
+				image: "?",
+				description: "You stay home, and luckily too, as you hear of a new Belta variant going around that’s twice as deadly!"
 			}
 		}
 	}
