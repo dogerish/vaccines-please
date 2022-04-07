@@ -23,9 +23,52 @@ const common = {
 			what: "BOVID-19",
 			length: 3,
 			lethality: 0.06
+		},
+		blu: {
+			how: "sicken",
+			what: "the Blu",
+			length: 3,
+			lethality: 0.09
 		}
 	}
 };
+/*
+{
+	date: "1/1/2020",
+	news: [
+		{
+			...common.news.,
+			content: "?"
+		}
+	],
+	decision: {
+		image: "?",
+		prompt: "?",
+		yes: "Yes",
+		no: "No"
+	},
+	result: {
+		yes: {
+			image: "?",
+			who: "?",
+			how: "?",
+			what: "?",
+			length: 0,
+			lethality: 0,
+			description: "?"
+		},
+		no: {
+			image: "?",
+			who: "?",
+			how: "?",
+			what: "?",
+			length: 0,
+			lethality: 0,
+			description: "?"
+		}
+	}
+}
+*/
 
 var plot = [
 	{
@@ -94,6 +137,50 @@ var plot = [
 				...common.sick.bovid,
 				length: 1,
 				description: "He starts yelling at you and sneezes, getting you sick for 1 week."
+			}
+		}
+	},
+	{
+		date: "3/2/2020",
+		news: [
+			{
+				...common.news.nbt,
+				content: "Many countries of the European Union have declared they are going into lockdown."
+			},
+			{
+				...common.news.bsj,
+				content: "United States to go into basic temporary shutdown mode in an attempt to mitigate strains on the health system due to the Boronavirus."
+			},
+			{
+				...common.news.beta,
+				content: "The US went into lockdown today. I'm so disappointed in this country. BOVID-19 isn't even real."
+			}
+		],
+		decision: {
+			image: "?",
+			prompt: "The Government says that we’re shutting down and quarantine for 2 weeks. Do you comply?",
+			yes: "I am never taking a step outside again - So long, grass!",
+			no: "Two weeks is too long! I need my people fix."
+		},
+		result: {
+			yes: {
+				image: "?",
+				description: "You are bored in your house, but you make do with board games. Everyone stays healthy."
+			},
+			no: {
+				image: "?",
+				multiple: [
+					{
+						who: "daughter",
+						...common.sick.bovid,
+						length: 2
+					},
+					{
+						who: "wife",
+						...common.sick.blu
+					}
+				],
+				description: "A restaurant waiter has asymptomatic Bovid and your daughter catches it. She gets hospitalized, and your wife gets the flu in the hospital."
 			}
 		}
 	}
