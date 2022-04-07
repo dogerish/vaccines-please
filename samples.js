@@ -134,5 +134,39 @@ var nonplot = [
 				description: "You continue to worry about how the sickness progresses."
 			}
 		}
+	},
+	{
+		news: [
+			{
+				...common.news.beta,
+				content: "It's all a sham. BOVID-19 is a hoax created by the Chinese government to further their ultimate goal of world domination!"
+			},
+			{
+				...common.news.bsj,
+				content: "The CDC recommends that people stay at home if they are feeling ill. Staying cautious and quarantining will help flatten the curve."
+			},
+			{
+				...common.news.bwitter,
+				content: "Lads, y'all better stay at home. This bovid is getting out of hand."
+			}
+		],
+		decision: {
+			image: "?",
+			prompt: "To quarantine, or not to quarantine. That is the question.",
+			yes: "I'll quarantine; I want to flatten the curve",
+			no: "Heel nah, the curve is already flat, just like the Earth!"
+		},
+		result: {
+			yes: {
+				image: "?",
+				how: "nothing",
+				description: "Thanks to your quarantine, nobody else got sick"
+			},
+			no: {
+				image: "?",
+				how: "nothing",
+				description: "Because you neglected to quarantine, you got some other people at the store sick. One of them died."
+			}
+		}
 	}
 ];
