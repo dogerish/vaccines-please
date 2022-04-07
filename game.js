@@ -27,7 +27,7 @@ class Game
 		this.activeDecision = null;
 		this.date = new Date("1/1/2020");
 
-		this.family = new Family(sickened => this.sideDecision = sickened);
+		this.family = new Family(who => { if (Math.random() < 0.5) this.sideDecision = who; });
 		this.updateStatusBar();
 		this.title = new Screen("title-screen");
 		this.backstory = new Screen("backstory-screen");
@@ -98,7 +98,7 @@ class Game
 	updateStatusBar()
 	{
 		$("clock").innerText = this.date.toLocaleDateString();
-		$("player-status").innerText = this.family.player.statusString();
+		$("player-status").innerText = "You are " + this.family.player.statusString();
 	}
 	swapScreens(/*String*/ next, hideExt, showExt)
 	{

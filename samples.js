@@ -81,7 +81,7 @@ var plot = [
 		},
 		result: {
 			yes: {
-				image: "",
+				image: "images/family-hug.jpg",
 				multiple: [
 					{ who: "player", ...common.sick.bovid, length: 1.5 },
 					{ who: "wife", ...common.sick.bovid, length: 1.5  },
@@ -90,7 +90,7 @@ var plot = [
 				description: "Shouldn’t have trusted that low-down, no good, lying cheat. He gets you, your wife and your son sick for 1.5 weeks."
 			},
 			no: {
-				image: "",
+				image: "images/angry-spit.jpg",
 				who: "player",
 				...common.sick.bovid,
 				length: 1,
