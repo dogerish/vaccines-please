@@ -78,6 +78,9 @@ button:hover {
 }
 
 /* news source */
+.news-title span{
+	color: var(--theme-secondary);
+}
 .news-wrapper {
 	margin: 5px;
 	border-radius: 5px;

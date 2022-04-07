@@ -49,7 +49,11 @@ class Game
 			}
 			$("news-feed").innerHTML = substituteKeys(
 				self.activeDecision.news.reduce(
-					(p, e) => p + substituteKeys(newsTemplate, e),
+					(p, e) =>
+					{
+						e.author = (e.author == undefined) ?  "" : "- " + e.author;
+						return p + substituteKeys(newsTemplate, e);
+					},
 					""
 				),
 				{ sickened: self.sideDecision?.name }
