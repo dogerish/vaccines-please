@@ -51,7 +51,7 @@ class Game
 				self.activeDecision.news.reduce(
 					(p, e) =>
 					{
-						e.author = (e.author == undefined) ?  "" : "- " + e.author;
+						e = { ...e, author: (e.author == undefined) ?  "" : "- " + e.author };
 						return p + substituteKeys(newsTemplate, e);
 					},
 					""

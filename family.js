@@ -94,6 +94,7 @@ class Family{
 				this[r.who].kill();
 				break;
 			case "nothing":
+			case undefined:
 				break;
 			default:
 				console.error(`Unknown effect for result '${r.how}'`);

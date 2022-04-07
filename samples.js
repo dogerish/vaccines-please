@@ -55,7 +55,6 @@ var plot = [
 			},
 			no: {
 				image: "images/staycation.jpeg",
-				how: "nothing",
 				description: "You relax in your home and get some quality family time."
 			}
 		}
@@ -125,12 +124,10 @@ var nonplot = [
 		result: {
 			yes: {
 				image: "images/relaxed.jpeg",
-				how: "nothing",
 				description: "After using essential oils, you gained peace of mind and believe that things will get better now. "
 			},
 			no: {
 				image: "images/worried.jpeg",
-				how: "nothing",
 				description: "You continue to worry about how the sickness progresses."
 			}
 		}
@@ -159,12 +156,10 @@ var nonplot = [
 		result: {
 			yes: {
 				image: "?",
-				how: "nothing",
 				description: "Thanks to your quarantine, nobody else got sick"
 			},
 			no: {
 				image: "?",
-				how: "nothing",
 				description: "Because you neglected to quarantine, you got some other people at the store sick. One of them died."
 			}
 		}
