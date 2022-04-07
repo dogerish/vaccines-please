@@ -160,28 +160,21 @@ var plot = [
 			}
 		],
 		decision: {
-			image: "?",
+			image: "images/executive-order.jpeg",
 			prompt: "The Government says that we’re shutting down and quarantine for 2 weeks. Do you comply?",
 			yes: "I am never taking a step outside again - So long, grass!",
 			no: "Two weeks is too long! I need my people fix."
 		},
 		result: {
 			yes: {
-				image: "?",
+				image: "images/board-games.jpeg",
 				description: "You are bored in your house, but you make do with board games. Everyone stays healthy."
 			},
 			no: {
-				image: "?",
+				image: "images/sick-girl.png",
 				multiple: [
-					{
-						who: "daughter",
-						...common.sick.bovid,
-						length: 2
-					},
-					{
-						who: "wife",
-						...common.sick.blu
-					}
+					{ who: "daughter", ...common.sick.bovid, length: 2 },
+					{ who: "wife", ...common.sick.blu }
 				],
 				description: "A restaurant waiter has asymptomatic Bovid and your daughter catches it. She gets hospitalized, and your wife gets the flu in the hospital."
 			}
@@ -240,18 +233,18 @@ var nonplot = [
 			}
 		],
 		decision: {
-			image: "?",
+			image: "images/hamlet.jpeg",
 			prompt: "To quarantine, or not to quarantine. That is the question.",
 			yes: "I'll quarantine; I want to flatten the curve",
 			no: "Heel nah, the curve is already flat, just like the Earth!"
 		},
 		result: {
 			yes: {
-				image: "?",
+				image: "images/yes-kid.jpeg",
 				description: "Thanks to your quarantine, nobody else got sick"
 			},
 			no: {
-				image: "?",
+				image: "images/rip.jpeg",
 				description: "Because you neglected to quarantine, you got some other people at the store sick. One of them died."
 			}
 		}
