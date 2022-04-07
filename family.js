@@ -39,8 +39,11 @@ class FamilyMember{
 	// returns true if sickness was applied
 	sicken(...sicknessArgs){
 		let s = new Sickness(...sicknessArgs);
-		// if not already sick or if sickness is more dangerous, use it
-		if (this.status != SICK || this.sickness.calcDanger() < s.calcDanger())
+		// if not dead and not already sick or if sickness is more dangerous, use it
+		if (
+			this.status != DEAD
+			&& (this.status != SICK || this.sickness.calcDanger() < s.calcDanger())
+		)
 		{
 			this.applySickness(s);
 			return true;
