@@ -263,6 +263,117 @@ var plot = [
 				description: "You stay home, and luckily too, as you hear of a new Belta variant going around that’s twice as deadly!"
 			}
 		}
+	},
+	// December - daughter
+	{
+		date: "12/24/2020",
+		precondition: "family.daughter.status != DEAD",
+		news: [
+			{
+				...common.news.bwitter,
+				content: "#VaxFax Even if you've had BOVID-19, you should get vaccinated. Health experts are still unsure about how long you're protected by natural immunity."
+			},
+			{
+				...common.news.beta,
+				content: "Apparently there is a risk of infertility as a result of this new vaccine. It was developed TOO QUICK! There's no way it's safe."
+			},
+			{
+				...common.news.bsj,
+				content: "Scientists have found no evidence supporting the myth that any of the new Bizer, Boderna, or Bohnson & Bohnson vaccines causes infertility in teenage women."
+			}
+		],
+		decision: {
+			image: "?",
+			prompt: "Are you going to vaccinate your daughter?",
+			yes: "Glory to the vaccinated!",
+			no: "I can’t, she’ll be infertile!"
+		},
+		result: {
+			yes: {
+				image: "?",
+				who: "daughter",
+				how: "superpower",
+				description: "Those vaccines are crazy, your daughter feels superpowered!"
+			},
+			no: {
+				image: "?",
+				description: "Your poor daughter is forced to wear masks everywhere and suffer while the rest of the world breathes fresh air again."
+			}
+		}
+	},
+	// December - son
+	{
+		date: "12/25/2020",
+		precondition: "family.son.status != DEAD",
+		news: [
+			{
+				...common.news.bwitter,
+				content: "Q: <i>\"Even if I'm vaccinated, I can catch bovid. WHAT IS THE POINT\"</i><br>A: Though there are breakthrough cases, being vaccinated does reduce transmission and lethality."
+			},
+			{
+				...common.news.nbt,
+				content: "CDC health officials are proposing the idea that vaccinated people will no longer need to be masked in public spaces."
+			},
+			{
+				...common.news.beta,
+				content: "I know for a fact that if I let my child get that vaccine, he's gonna get autism. I don't want my child being autistic if I can avoid it, and I recommend that y'all would too! I am NOT allowing my child to be vaccinated. Let him get Bovid!"
+			}
+		],
+		decision: {
+			image: "?",
+			prompt: "Are you going to have your son vaccinated?",
+			yes: "Glory to the vaccinated!",
+			no: "I don’t want him to have autism!"
+		},
+		result: {
+			yes: {
+				image: "?",
+				who: "son",
+				how: "superpower",
+				description: "Them vaccines really do be special, your son feels powered up now!"
+			},
+			no: {
+				image: "?",
+				description: "Your disheartened son is heartbroken to see the vaccinated being able to go mask free, breathing the wonderfully luscious fresh air, all while he has to be suffocated under this awful constricting mask."
+			}
+		}
+	},
+	// December - player
+	{
+		date: "12/26/2020",
+		precondition: "family.player.status != DEAD",
+		news: [
+			{
+				...common.news.beta,
+				content: "The bovid vaccine sucks. I got vaccinated last week and just got bovid anyway!"
+			},
+			{
+				...common.news.bwitter,
+				content: "The vaccines were devoloped too fast. It must be a government campaign to implant microchips in US citizens! NO WAY am I taking the vaccine. I'd rather wear a mask! 😤"
+			},
+			{
+				...common.news.bsj,
+				content: "Studies have proven the Bizer vaccine to have 95% efficacy according to clinical trials conducted by the FDA. The CDC continues to recommend everyone to get vaccinated."
+			}
+		],
+		decision: {
+			image: "?",
+			prompt: "Are you going to get vaccinated?",
+			yes: "Glory to the vaccinated!",
+			no: "No, the government can’t track me with microchips"
+		},
+		result: {
+			yes: {
+				image: "?",
+				who: "player",
+				how: "superpower",
+				description: "Sheeeeesh, you're feeling a little pumped after that!"
+			},
+			no: {
+				image: "?",
+				description: "You are forced to wear masks everywhere and suffer as you watch the rest of the world breathe fresh air again."
+			}
+		}
 	}
 ];
 
