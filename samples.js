@@ -186,6 +186,54 @@ var plot = [
 			}
 		}
 	},
+	// April
+	{
+		date: "4/4/2020",
+		news: [
+			{
+				...common.news.bwitter,
+				content: "My child can NOT learn in a virtual environment!! This is unacceptable 🤬"
+			},
+			{
+				...common.news.bsj,
+				content: "US Schools to transition to virtual learning."
+			}
+		],
+		decision: {
+			image: "images/virtual.png",
+			prompt: "How do you respond to the US schools locking down?",
+			yes: "Welcome Boom™ with open arms (and clean hands)!",
+			no: "This is a free country!"
+		},
+		result: {
+			yes: {
+				image: "images/doggie.jpg",
+				who: "dog",
+				how: "sicken",
+				what: "Unknown Sickness",
+				length: 1,
+				lethality: 0,
+				description: "You get some fresh air by walking your dog, but your dog gets sick! Poor Bob :("
+			},
+			no: {
+				image: "images/doggie.jpg",
+				multiple: [
+					{
+						who: "player",
+						...common.sick.bovid,
+						length: 2
+					},
+					{
+						who: "dog",
+						...common.sick.bovid,
+						length: 3,
+						lethality: 1
+					}
+				],
+				description: "While talking to someone at the park, both you and your dog catch Bovid."
+			}
+		}
+	},
 	// May
 	{
 		date: "5/10/2020",
