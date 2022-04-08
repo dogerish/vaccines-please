@@ -360,7 +360,7 @@ var plot = [
 			image: "?",
 			prompt: "Are you going to get vaccinated?",
 			yes: "Glory to the vaccinated!",
-			no: "No, the government can’t track me with microchips"
+			no: "No, the government can’t track <i>me</i> with microchips"
 		},
 		result: {
 			yes: {

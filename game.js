@@ -67,9 +67,9 @@ class Game
 			$("news-date").innerText = self.date.toDateString();
 
 			$("decision-image").setAttribute("src", self.activeDecision.decision.image);
-			$("decision-prompt").innerText = self.activeDecision.decision.prompt;
-			$("decision-yes").innerText = self.activeDecision.decision.yes;
-			$("decision-no").innerText = self.activeDecision.decision.no;
+			$("decision-prompt").innerHTML = self.activeDecision.decision.prompt;
+			$("decision-yes").innerHTML = self.activeDecision.decision.yes;
+			$("decision-no").innerHTML = self.activeDecision.decision.no;
 		});
 		this.result = new Screen("result-screen", function(response)
 		{
