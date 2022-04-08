@@ -283,20 +283,20 @@ var plot = [
 			}
 		],
 		decision: {
-			image: "?",
+			image: "images/bovid-vaccine.png",
 			prompt: "Are you going to vaccinate your daughter?",
 			yes: "Glory to the vaccinated!",
 			no: "I can’t, she’ll be infertile!"
 		},
 		result: {
 			yes: {
-				image: "?",
+				image: "images/superhero1.png",
 				who: "daughter",
 				how: "superpower",
 				description: "Those vaccines are crazy, your daughter feels superpowered!"
 			},
 			no: {
-				image: "?",
+				image: "images/double-mask.jpeg",
 				description: "Your poor daughter is forced to wear masks everywhere and suffer while the rest of the world breathes fresh air again."
 			}
 		}
@@ -320,20 +320,20 @@ var plot = [
 			}
 		],
 		decision: {
-			image: "?",
+			image: "images/bovid-vaccine.png",
 			prompt: "Are you going to have your son vaccinated?",
 			yes: "Glory to the vaccinated!",
 			no: "I don’t want him to have autism!"
 		},
 		result: {
 			yes: {
-				image: "?",
+				image: "images/superhero2.png",
 				who: "son",
 				how: "superpower",
 				description: "Them vaccines really do be special, your son feels powered up now!"
 			},
 			no: {
-				image: "?",
+				image: "images/double-mask.jpeg",
 				description: "Your disheartened son is heartbroken to see the vaccinated being able to go mask free, breathing the wonderfully luscious fresh air, all while he has to be suffocated under this awful constricting mask."
 			}
 		}
@@ -357,20 +357,20 @@ var plot = [
 			}
 		],
 		decision: {
-			image: "?",
+			image: "images/bovid-vaccine.png",
 			prompt: "Are you going to get vaccinated?",
 			yes: "Glory to the vaccinated!",
 			no: "No, the government can’t track <i>me</i> with microchips"
 		},
 		result: {
 			yes: {
-				image: "?",
+				image: "images/superhero3.png",
 				who: "player",
 				how: "superpower",
 				description: "Sheeeeesh, you're feeling a little pumped after that!"
 			},
 			no: {
-				image: "?",
+				image: "images/double-mask.jpeg",
 				description: "You are forced to wear masks everywhere and suffer as you watch the rest of the world breathe fresh air again."
 			}
 		}
@@ -441,6 +441,40 @@ var nonplot = [
 			no: {
 				image: "images/rip.jpeg",
 				description: "Because you neglected to quarantine, you got some other people at the store sick. One of them died."
+			}
+		}
+	},
+	// Shower with mask
+	{
+		news: [
+			{
+				...common.news.bwitter,
+				content: "always wear your mask correctly😷 <br>✅ Make sure it covers your nose and mouth. <br>❌ Don't lower your mask when coughing or sneezing"
+			},
+			{
+				...common.news.bwitter,
+				content: "WEAR YOUR MASK • KEEP YOUR WISDOM"
+			}
+		],
+		decision: {
+			image: "?",
+			prompt: "Do you wear a mask while showering?",
+			yes: "Yeah, duh",
+			no: "Nah that's dumb"
+		},
+		result: {
+			yes: {
+				image: "?",
+				description: "While showering you realize how dumb this was and gets sick with embarresment",
+				who: "player",
+				how: "sicken",
+				what: "embarrassment",
+				length: 1,
+				lethality: 0.00001
+			},
+			no: {
+				image: "?",
+				description: "you take a normal shower and feel clean"
 			}
 		}
 	}
