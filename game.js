@@ -40,7 +40,13 @@ class Game
 				];
 			else
 			{
-				self.activeDecision = plot[++self.index];
+				let family = self.family;
+				// find next decision whose precondition is satisfied
+				do { self.activeDecision = plot[++self.index]; }
+				while (
+					   self.activeDecision?.precondition
+					&& !eval(self.activeDecision?.precondition)
+				);
 				if (self.activeDecision == undefined) return self.swapScreens('endgame');
 				self.date = new Date(self.activeDecision.date);
 				self.family.update(self.date);
