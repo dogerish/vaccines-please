@@ -27,7 +27,7 @@ class Game
 		this.activeDecision = null;
 		this.date = new Date("1/1/2020");
 
-		this.family = new Family(who => { if (Math.random() < 0.5) this.sideDecision = who; });
+		this.family = new Family(who => { if (Math.random() < 0.25) this.sideDecision = who; });
 		this.updateStatusBar();
 		this.title = new Screen("title-screen");
 		this.backstory = new Screen("backstory-screen");
@@ -101,12 +101,12 @@ class Game
 			var deadFamily = "";
 			var livingFamily = "";
 			self.family.nonPlayerList.forEach(member => {
-				(member.status == DEAD) ? deadFamily += `<li>Your ${member.name} died from ${member.sickness}</li>` : livingFamily  += `<li>Your ${member.name}</li>` ;
+				(member.status == DEAD) ? deadFamily += `<li>Your ${member.name} died from ${member.sickness.name}</li>` : livingFamily  += `<li>Your ${member.name}</li>` ;
 			});
 			if(self.family.player.status == DEAD){
 				(livingFamily == "") ? $("endgame-image").classList.remove("hidden") : $("endgame-image").classList.add("hidden")
 				$("endgame-result").innerHTML = "You died";
-				$("endgame-aliveDetail").innerHTML = `you survived for ${self.date.getMonth()} months. ${livingFamily != "" ? `<br>people who are left to take care of themselves` : ""}`
+				$("endgame-aliveDetail").innerHTML = `you survived for ${self.sickness.endsOn.getMonth()} months. ${livingFamily != "" ? `<br>people who are left to take care of themselves` : ""}`
 				$("endgame-aliveList").innerHTML = livingFamily;
 			}else{
 				$("endgame-result").innerHTML = "You survived";

@@ -22,19 +22,19 @@ const common = {
 			how: "sicken",
 			what: "BOVID-19",
 			length: 3,
-			lethality: 0.06
+			lethality: 0.15
 		},
 		belta: {
 			how: "sicken",
 			what: "BOVID-19 Belta Variant",
 			length: 1,
-			lethality: 0.12
+			lethality: 0.25
 		},
 		blu: {
 			how: "sicken",
 			what: "the Blu",
 			length: 3,
-			lethality: 0.09
+			lethality: 0.20
 		}
 	}
 };
@@ -167,7 +167,7 @@ var plot = [
 		],
 		decision: {
 			image: "images/executive-order.jpeg",
-			prompt: "The Government says that we’re shutting down and quarantine for 2 weeks. Do you comply?",
+			prompt: "The Government says that we’re shutting down and quarantining for 2 weeks. Do you comply?",
 			yes: "I am never taking a step outside again - So long, grass!",
 			no: "Two weeks is too long! I need my people fix."
 		},
@@ -430,7 +430,7 @@ var nonplot = [
 		decision: {
 			image: "images/hamlet.jpeg",
 			prompt: "To quarantine, or not to quarantine. That is the question.",
-			yes: "I'll quarantine; I want to flatten the curve",
+			yes: "Quarantine; I want to flatten the curve",
 			no: "Heel nah, the curve is already flat, just like the Earth!"
 		},
 		result: {
@@ -440,7 +440,7 @@ var nonplot = [
 			},
 			no: {
 				image: "images/rip.jpeg",
-				description: "Because you neglected to quarantine, you got some other people at the store sick. One of them died."
+				description: "Because you neglected to quarantine, some other people at the store got sick. One of them died."
 			}
 		}
 	},
