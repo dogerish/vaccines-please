@@ -505,24 +505,24 @@ var nonplot = [
 			}
 		],
 		decision: {
-			image: "?",
+			image: "images/wear-mask.jpeg",
 			prompt: "Do you wear a mask while showering?",
 			yes: "Yeah, duh",
 			no: "Nah that's dumb"
 		},
 		result: {
 			yes: {
-				image: "?",
-				description: "While showering you realize how dumb this was and gets sick with embarresment",
+				image: "images/shower-mask.jpeg",
+				description: "While showering you realize how dumb this is and get sick with embarresment",
 				who: "player",
 				how: "sicken",
 				what: "embarrassment",
 				length: 1,
-				lethality: 0.00001
+				lethality: 0.0001
 			},
 			no: {
-				image: "?",
-				description: "you take a normal shower and feel clean"
+				image: "images/normal-shower.jpeg",
+				description: "You take a normal shower and feel clean"
 			}
 		}
 	}

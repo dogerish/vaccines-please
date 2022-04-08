@@ -106,7 +106,7 @@ class Game
 			if(self.family.player.status == DEAD){
 				(livingFamily == "") ? $("endgame-image").classList.remove("hidden") : $("endgame-image").classList.add("hidden")
 				$("endgame-result").innerHTML = "You died";
-				$("endgame-aliveDetail").innerHTML = `you survived for ${self.sickness.endsOn.getMonth()} months. ${livingFamily != "" ? `<br>people who are left to take care of themselves` : ""}`
+				$("endgame-aliveDetail").innerHTML = `you survived for ${self.family.player.sickness.endsOn.getMonth()} months. ${livingFamily != "" ? `<br>people who are left to take care of themselves` : ""}`
 				$("endgame-aliveList").innerHTML = livingFamily;
 			}else{
 				$("endgame-result").innerHTML = "You survived";
